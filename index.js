@@ -3,9 +3,8 @@ move(inventory).to(0, 0)
 
 const character = newImage('assets/green-character/static.gif')
 
-const character = newImage('assets/green-character/static.gif')
-
-function handleDirectionChange(){
+const handleDirectionChange = (direction) => {
+ 
     if(direction === null){
         character.src = 'assets/green-character/static.gif'
     }
@@ -21,13 +20,11 @@ function handleDirectionChange(){
     if(direction === 'south'){
         character.src = 'assets/green-character/south.gif'
     }
+
 }
 
 move(character).withArrowKeys(100, 250, handleDirectionChange)
 
-
-
-move(character).to(100, 250)
 
 
 move(newImage('assets/tree.png')).to(200, 450)

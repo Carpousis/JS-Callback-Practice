@@ -1,4 +1,4 @@
-function newItem(url){
+const newItem = (url) => {
     let item = newImage(url)
     item.addEventListener('click', () => {
         item.remove()

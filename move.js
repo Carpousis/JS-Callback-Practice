@@ -6,7 +6,7 @@ const move=(element) => {
         element.style.bottom = bottom + 'px'
     }
 
-    const moveWithArrowKeys = (left, bottom, callback) => {
+    const moveWithArrowKeys = (left, bottom, handleDirectionChange) => {
         let direction = null;
         let x = left;
         let y = bottom;      
@@ -31,7 +31,7 @@ const move=(element) => {
             }
             setInterval(moveCharacter, 1)
             
-            document.addEventListener("keydown", function(e){
+            document.addEventListener("keydown", (e) => {
                 if (e.repeat) return;
                 if (e.key === "ArrowLeft"){
                     direction="west"
@@ -45,11 +45,11 @@ const move=(element) => {
                 if (e.key === "ArrowDown"){
                     direction="south"
                 }
-                callback()
+                handleDirectionChange(direction)
             })
-            document.addEventListener("keyup", function(e){
+            document.addEventListener("keyup", (e) => {
                 direction=null
-                callback()
+                handleDirectionChange(direction)
             })
     }
 
