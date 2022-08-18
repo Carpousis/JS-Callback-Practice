@@ -1,4 +1,4 @@
-const move=(element) => {
+const move = (element) => {
     element.style.position = 'fixed'
 
     const moveToCoordinates = (left, bottom) => {
