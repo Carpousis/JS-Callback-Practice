@@ -35,3 +35,12 @@ move(newImage('assets/well.png')).to(500, 575)
 move(newItem('assets/sword.png')).to(500, 555)
 move(newItem('assets/shield.png')).to(165, 335)
 move(newItem('assets/staff.png')).to(600, 250)
+
+const restoreItem = document.createElement('button')
+restoreItem.textContent = 'restore'
+document.body.append(restoreItem)
+restoreItem.addEventListener('click', () => {
+    newItem('assets/sword.png', 500, 405)
+    newItem('assets/sheild.png', 165, 185)
+    newItem('assets/staff.png', 600, 100)
+})
